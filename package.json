@@ -1,0 +1,67 @@
+{
+  "name": "@nixxy/react-simple-select",
+  "version": "0.0.0",
+  "private": "false",
+  "description": "A simple, customizable, accessible select dropdown for React.",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./assets/react-simple-select.css": "./dist/assets/react-simple-select.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justnixx/react-simple-select.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b './tsconfig.build.json' && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "release": "standard-version"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.12",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "sass": "^1.86.0",
+    "standard-version": "^9.5.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "keywords": [
+    "react",
+    "select",
+    "custom-select",
+    "react-simple-select",
+    "dropdown"
+  ],
+  "author": "ℵi✗✗",
+  "license": "MIT"
+}

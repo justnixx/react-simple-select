@@ -1,0 +1,138 @@
+.nx-simple-select {
+  color: #333;
+  user-select: none;
+  font-family: inherit;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  min-width: 12.5rem;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: white;
+
+  &:focus-within {
+    border: 0;
+    outline: 2px solid;
+
+    .select-icon {
+      opacity: 1;
+    }
+  }
+
+  // Scrollbar
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(204, 204, 204, 0.5);
+    height: 8px;
+    border-radius: 8px;
+  }
+
+  & .select-icon {
+    margin-left: 0.5rem;
+    opacity: 0.4;
+  }
+
+  // Options
+  .options {
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    will-change: opacity, transform;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background: white;
+    max-height: 24rem;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 0;
+    box-shadow: 0 2px 32px -8px rgba(24, 24, 24, 0.2);
+    z-index: 10;
+
+    .loading,
+    .error {
+      font-size: 0.875rem;
+    }
+
+    .loading {
+      align-self: center;
+      text-align: center;
+    }
+
+    .error {
+      color: red;
+    }
+
+    @media (max-width: 640px) {
+      position: fixed;
+      z-index: 1000;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  &.open .options {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  // Option
+  .option {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover,
+    &.active,
+    &.focused {
+      background: #f0f0f0;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  // Selected Option(s)
+  .selected {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    & > span:not(.placeholder):not(:last-child):after {
+      content: ',';
+    }
+  }
+
+  // PLaceholder
+  .placeholder {
+    color: #888;
+  }
+}
