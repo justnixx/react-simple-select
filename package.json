@@ -1,6 +1,6 @@
 {
   "name": "@nixxy/react-simple-select",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple, customizable, accessible select dropdown for React.",
   "exports": {
     ".": {
