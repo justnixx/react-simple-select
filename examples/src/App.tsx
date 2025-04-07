@@ -5,6 +5,12 @@ import { useState } from 'react';
 
 type SelectedOption = Option | Option[] | null;
 
+type User = {
+  first_name: string;
+  last_name: string;
+  avatar?: string;
+};
+
 const options: Option[] = [
   { label: 'Apple 🍎', value: 'apple' },
   { label: 'Banana 🍌', value: 'banana' },
@@ -25,20 +31,36 @@ const optionsWithIcons: Option[] = [
   },
 ];
 
+const fetchUsers = async () => {
+  const res = await fetch('https://reqres.in/api/users');
+  const resData = await res.json();
+  return resData.data.map((user: User) => ({
+    label: `${user.first_name} ${user.last_name}`,
+    value: `${user.first_name} ${user.last_name}`,
+    Icon: user.avatar ? (
+      <img
+        src={user.avatar}
+        style={{ height: 28, width: 28, borderRadius: 14 }}
+      />
+    ) : null,
+  }));
+};
+
 export default function App() {
   const [singleSelected, setSingleSelected] = useState<SelectedOption>(null);
   const [multiSelected, setMultiSelected] = useState<SelectedOption>(null);
   const [selected, setSelected] = useState<SelectedOption>(null);
+  const [asyncSelected, setAsyncSelected] = useState<SelectedOption>(null);
 
   return (
     <div className="flex flex-col min-h-screen">
       <div className="bg-pink-600 sm:rounded-b-2xl text-pink-50">
         <div className="mx-auto px-3 sm:px-12 max-w-screen-xl container">
-          <div className="flex flex-col justify-center items-center min-h-56">
+          <div className="flex flex-col justify-center min-h-56">
             <h1 className="font-bold text-2xl sm:text-3xl">
               React Simple Select
             </h1>
-            <p className="mt-3 max-w-md text-pink-300 text-center">
+            <p className="mt-3 max-w-lg text-pink-300">
               A lightweight, customizable, and accessible React select component
               with support for multi-select, async options, and keyboard
               navigation.
@@ -91,6 +113,21 @@ export default function App() {
           <h3 className="mt-2">Selected:</h3>
           <pre className="bg-stone-600 p-2 rounded-md text-stone-50 text-sm">
             {JSON.stringify(selected, null, 2)}
+          </pre>
+        </section>
+
+        <section>
+          <h2 className="my-5 font-bold text-2xl">Async Example</h2>
+          <SimpleSelect
+            className="w-full"
+            options={fetchUsers}
+            onChange={setAsyncSelected}
+            placeholder="Choose a user..."
+          />
+
+          <h3 className="mt-2">Selected:</h3>
+          <pre className="bg-stone-600 p-2 rounded-md text-stone-50 text-sm">
+            {JSON.stringify(asyncSelected, null, 2)}
           </pre>
         </section>
       </div>
