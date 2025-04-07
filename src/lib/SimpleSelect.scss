@@ -122,12 +122,27 @@
 
   // Selected Option(s)
   .selected {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.25rem;
 
-    & > span:not(.placeholder):not(:last-child):after {
-      content: ',';
+    & > div {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      // &:not(:last-child) span:not(.placeholder):after {
+      //   content: ',';
+      // }
+    }
+
+    &.multiple {
+      & > div {
+        background-color: #ccc;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
     }
   }
 

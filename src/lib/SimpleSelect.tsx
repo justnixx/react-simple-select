@@ -143,14 +143,26 @@ export default function SimpleSelect({
       {...rest}
     >
       {/* Selected Option(s) */}
-      <div className="selected">
+      <div
+        className={`selected ${
+          Array.isArray(selected) && selected.length > 1 ? 'multiple' : ''
+        }`}
+      >
         {selected === null ||
         (Array.isArray(selected) && selected.length === 0) ? (
           <span className="placeholder">{placeholder}</span>
         ) : Array.isArray(selected) ? (
-          selected.map((s) => <span key={s.value}>{s.label}</span>)
+          selected.map((s) => (
+            <div key={s.value}>
+              {s.Icon}
+              <span>{s.label}</span>
+            </div>
+          ))
         ) : (
-          selected.label
+          <div>
+            {selected.Icon}
+            <span>{selected.label}</span>
+          </div>
         )}
       </div>
 
