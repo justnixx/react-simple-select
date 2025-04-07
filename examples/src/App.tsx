@@ -49,7 +49,8 @@ const fetchUsers = async () => {
 export default function App() {
   const [singleSelected, setSingleSelected] = useState<SelectedOption>(null);
   const [multiSelected, setMultiSelected] = useState<SelectedOption>(null);
-  const [selected, setSelected] = useState<SelectedOption>(null);
+  const [withIconSelected, setWithIconSelected] =
+    useState<SelectedOption>(null);
   const [asyncSelected, setAsyncSelected] = useState<SelectedOption>(null);
 
   return (
@@ -80,7 +81,7 @@ export default function App() {
           />
 
           <h3 className="mt-2">Selected:</h3>
-          <pre className="bg-stone-600 p-2 rounded-md text-stone-50 text-sm">
+          <pre className="bg-stone-600 p-2 rounded-md overflow-x-auto text-stone-50 text-sm">
             {JSON.stringify(singleSelected, null, 2)}
           </pre>
         </section>
@@ -96,7 +97,7 @@ export default function App() {
           />
 
           <h3 className="mt-2">Selected:</h3>
-          <pre className="bg-stone-600 p-2 rounded-md text-stone-50 text-sm">
+          <pre className="bg-stone-600 p-2 rounded-md overflow-x-auto text-stone-50 text-sm">
             {JSON.stringify(multiSelected, null, 2)}
           </pre>
         </section>
@@ -106,13 +107,13 @@ export default function App() {
           <SimpleSelect
             className="w-full"
             options={optionsWithIcons}
-            onChange={setSelected}
+            onChange={setWithIconSelected}
             placeholder="Choose a fruit..."
           />
 
           <h3 className="mt-2">Selected:</h3>
-          <pre className="bg-stone-600 p-2 rounded-md text-stone-50 text-sm">
-            {JSON.stringify(selected, null, 2)}
+          <pre className="bg-stone-600 p-2 rounded-md overflow-x-auto text-stone-50 text-sm">
+            {JSON.stringify(withIconSelected, null, 2)}
           </pre>
         </section>
 
@@ -126,7 +127,7 @@ export default function App() {
           />
 
           <h3 className="mt-2">Selected:</h3>
-          <pre className="bg-stone-600 p-2 rounded-md text-stone-50 text-sm">
+          <pre className="bg-stone-600 p-2 rounded-md overflow-x-auto text-stone-50 text-sm">
             {JSON.stringify(asyncSelected, null, 2)}
           </pre>
         </section>
@@ -137,7 +138,7 @@ export default function App() {
       <div className="justify-self-end py-3 h-16">
         <div className="mx-auto px-3 sm:px-12 max-w-screen-xl container">
           <p>
-            👉
+            👉{' '}
             <a
               className="border-b text-pink-500 hover:text-pink-400 text-sm"
               href="https://github.com/justnixx/react-simple-select?tab=readme-ov-file#react-simple-select"
