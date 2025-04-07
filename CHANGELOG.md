@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/justnixx/react-simple-select/compare/v0.0.3...v0.0.4) (2025-04-07)
+
+
+### Features
+
+* **example:** add async options demo ([6318acd](https://github.com/justnixx/react-simple-select/commit/6318acd94d37186770e60d02c5ca37522a632fbc))
+
 ### [0.0.3](https://github.com/justnixx/react-simple-select/compare/v0.0.2...v0.0.3) (2025-04-07)
 
 
