@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@nixxy/react-simple-select": "^0.0.3",
+    "@nixxy/react-simple-select": "^0.0.4",
     "@tailwindcss/vite": "^4.0.15",
     "lucide-react": "^0.483.0",
     "react": "^19.0.0",

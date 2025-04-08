@@ -414,10 +414,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@nixxy/react-simple-select@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@nixxy/react-simple-select/-/react-simple-select-0.0.3.tgz#0cda6930d4839fec7a1ad7d452c4b858ea20dfff"
-  integrity sha512-xP86+IgXeq6ujNPGyRPTavmTflm8K+j2wUaLi+5g4Rjza5dLYl6TWdarM8pPTyPVg6nnpgvREs6hC2DoDnegRQ==
+"@nixxy/react-simple-select@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@nixxy/react-simple-select/-/react-simple-select-0.0.4.tgz#77f6a51da1fce63bc8a04ba96b4b37bd60a11d2e"
+  integrity sha512-25o2Elx9mk2C11EBY9DqnszE1jhavJYsI8i+C7zS5yRjamOyO23Dx2olPEQq6Uk4YIkynjBCnkGP2I4bTMCH3Q==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
